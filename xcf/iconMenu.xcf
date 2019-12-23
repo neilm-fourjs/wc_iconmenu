@@ -8,4 +8,8 @@
 		<PATH>$(res.deployment.path)</PATH>
 		<MODULE>wc_iconMenu_main</MODULE>
 	</EXECUTION>
+	<UA_OUTPUT>
+		<PROXY>$(res.uaproxy.cmd)</PROXY>
+		<PUBLIC_IMAGEPATH>$(res.deployment.path)/pics</PUBLIC_IMAGEPATH>
+	</UA_OUTPUT>
 </APPLICATION>

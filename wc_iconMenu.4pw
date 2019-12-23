@@ -102,9 +102,9 @@
     </Package>
     <Package binaryName="wc_iconMenu" dependencies="400358049,781919164,159917928,212784684,715422167,362164715,313644474,-2071097198" description="Android Package" id="187810339" label="wc_iconMenu" platform="Android">
       <DynamicProperty name="packageId" value="com.fourjs.wc_iconMenu"/>
-      <DynamicProperty name="packageLabel" value="wc_iconMenu"/>
+      <DynamicProperty name="packageLabel" value="iconMenu"/>
       <Directory description="Binaries" excludedFiles="Test.42r" includedFiles="*.42?" label="Binaries" recursive="false" sourceDirectory="$(ProjectDir)/bin"/>
-      <Directory description="Resources" includedFiles="*.4ad,*.4st,*.4tm,*.4tb,*.4sm,*.42s,*.iem" label="etc" recursive="false" sourceDirectory="$(ProjectDir)/etc"/>
+      <Directory description="Resources" label="etc" recursive="false" sourceDirectory="$(ProjectDir)/etc"/>
       <Directory label="pics" recursive="false" sourceDirectory="$(ProjectDir)/pics"/>
       <Directory description="Web Components" destinationDirectory="$(RootDir)/webcomponents" label="Webcomponents" sourceDirectory="$(ProjectDir)/pics/webcomponents"/>
     </Package>

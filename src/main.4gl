@@ -10,12 +10,14 @@ MAIN
 --	CALL myMenu.addMenuItem( "Test1", "test.png", "test1")
 --	CALL myMenu.addMenuItem( "Close", "poweroff.png", "close")
 
-	IF NOT myMenu.init(myMenu.fileName) THEN
+	IF NOT myMenu.init(myMenu.fileName) THEN -- something wrong?
 		EXIT PROGRAM
 	END IF
 
 	WHILE l_menuItem != "exit" AND l_menuItem != "close"
-		LET l_menuItem = myMenu.ui()
-		CALL fgl_winMessage("Info",SFMT("Menu item = '%1'",l_menuItem), "information")
+		LET l_menuItem = myMenu.ui() -- show icon menu and wait for selection.
+		IF l_menuItem != "close" THEN
+			CALL fgl_winMessage("Info",SFMT("Menu item = '%1'",l_menuItem), "information")
+		END IF
 	END WHILE
 END MAIN
