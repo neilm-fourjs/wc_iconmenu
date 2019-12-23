@@ -31,3 +31,7 @@ The menu is built from a simple json file
 ```
 
 and used by call the 'init' function then the 'ui' function in a loop, see main.4gl
+
+# Screenshot
+
+![ss1](https://github.com/neilm-fourjs/wc_iconMenu/raw/master/Screenshots/shot1.png "shot1")
