@@ -29,8 +29,13 @@ The menu is built from a simple json file
   ]
 }
 ```
+or can be built in 4gl before calling the init the function.
+```
+	CALL myMenu.addMenuItem( "Test1", "test.png", "test1")
+	CALL myMenu.addMenuItem( "Close", "poweroff.png", "close")
+```
 
-and used by call the 'init' function then the 'ui' function in a loop, see main.4gl
+To activate call the 'init' function then the 'ui' function in a loop, see main.4gl for an example.
 
 # Screenshot
 
