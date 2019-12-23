@@ -4,11 +4,11 @@ MAIN
 	DEFINE l_menuItem STRING = "."
 
 -- Use a JSON file for the menu data
---	LET myMenu.fileName = "myMenu.js"
+	LET myMenu.fileName = "myMenu.js"
 -- or
 -- set the 4gl array for the menu data.
-	CALL myMenu.addMenuItem( "Test1", "test.png", "test1")
-	CALL myMenu.addMenuItem( "Close", "poweroff.png", "close")
+--	CALL myMenu.addMenuItem( "Test1", "test.png", "test1")
+--	CALL myMenu.addMenuItem( "Close", "poweroff.png", "close")
 
 	IF NOT myMenu.init(myMenu.fileName) THEN
 		EXIT PROGRAM

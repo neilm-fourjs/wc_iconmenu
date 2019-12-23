@@ -64,9 +64,9 @@
   </Settings>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
-  <Group environment="value:FGLIMAGEPATH=$(ProjectDir)/pics" id="10414220" label="wc_iconMenu" language="Genero">
+  <Group environment="value:FGLRESOURCEPATH=$(ProjectDir)/etc,value:FGLIMAGEPATH=$(ProjectDir)/pics" id="10414220" label="wc_iconMenu" language="Genero">
     <Library binaryName="etc" id="362164715" label="etc">
-      <File filePath="config/fglprofile"/>
+      <File filePath="etc/default.4st"/>
       <File filePath="etc/myMenu.js"/>
     </Library>
     <Library binaryName="wc" id="159917928" label="wc">
@@ -74,35 +74,48 @@
       <File filePath="pics/webcomponents/iconMenu/iconMenu.html"/>
       <File filePath="pics/webcomponents/iconMenu/iconMenu.js"/>
     </Library>
-    <Application binaryName="wc_iconMenu" dependencies="159917928,212784684,362164715,455109296" id="400358049" label="wc_iconMenu">
+    <Library binaryName="wc_iconMenu" id="463996434" label="wc_iconMenu">
       <File filePath="src/wc_iconMenu.4gl"/>
       <File filePath="src/wc_iconMenu.per"/>
-    </Application>
-    <Application binaryName="wc_iconMenu_main" dependencies="159917928,362164715,400358049" id="-2071097198" label="wc_iconMenu_main">
+    </Library>
+    <Application binaryName="wc_iconMenu_main" dependencies="159917928,362164715,400358049,463996434,-2142739448" id="-2071097198" label="wc_iconMenu_main">
       <File filePath="src/main.4gl"/>
     </Application>
+    <Library binaryName="xcf" id="-2142739448" label="xcf">
+      <File filePath="xcf/iconMenu.xcf"/>
+    </Library>
   </Group>
   <Group id="674884836" label="wc_iconMenu_Packages" language="Genero">
-    <Package binaryName="MyApp_iOS" dependencies="400358049,781919164,159917928,212784684,715422167,362164715,313644474" description="iOS Package" id="88782120" label="MyApp_iOS" platform="iOS">
+    <Package binaryName="MyApp_iOS" dependencies="400358049,781919164,159917928,212784684,715422167,362164715,313644474" description="iOS Package" excludeFromBuild="true" id="88782120" label="MyApp_iOS" platform="iOS">
       <DynamicProperty name="packageId" value="com.company.myapp"/>
       <DynamicProperty name="packageLabel" value="MyApp"/>
       <Directory description="Binaries" excludedFiles="Test.42r" includedFiles="*.42?" label="Binaries" recursive="false" sourceDirectory="$(ProjectDir)/bin"/>
       <Directory description="Resources" includedFiles="*.4ad,*.4st,*.4tm,*.4tb,*.4sm,*.42s,*.iem" label="etc" recursive="false" sourceDirectory="$(ProjectDir)/etc"/>
       <Directory description="Web Components" destinationDirectory="$(RootDir)/webcomponents" label="Webcomponents" sourceDirectory="$(ProjectDir)/webcomponents"/>
     </Package>
-    <Package binaryName="MyApp_iOS_Simulator" dependencies="400358049,781919164,159917928,212784684,715422167,362164715,313644474" description="iOS Simulator Package" id="197274948" label="MyApp_iOS_Simulator" platform="iOS Simulator">
+    <Package binaryName="MyApp_iOS_Simulator" dependencies="400358049,781919164,159917928,212784684,715422167,362164715,313644474" description="iOS Simulator Package" excludeFromBuild="true" id="197274948" label="MyApp_iOS_Simulator" platform="iOS Simulator">
       <DynamicProperty name="packageId" value="com.company.myapp"/>
       <DynamicProperty name="packageLabel" value="MyApp"/>
       <Directory description="Binaries" excludedFiles="Test.42r" includedFiles="*.42?" label="Binaries" recursive="false" sourceDirectory="$(ProjectDir)/bin"/>
       <Directory description="Resources" includedFiles="*.4ad,*.4st,*.4tm,*.4tb,*.4sm,*.42s,*.iem" label="etc" recursive="false" sourceDirectory="$(ProjectDir)/etc"/>
       <Directory description="Web Components" destinationDirectory="$(RootDir)/webcomponents" label="Webcomponents" sourceDirectory="$(ProjectDir)/webcomponents"/>
     </Package>
-    <Package binaryName="wc_iconMenu" dependencies="400358049,781919164,159917928,212784684,715422167,362164715,313644474" description="Android Package" id="187810339" label="wc_iconMenu" platform="Android">
+    <Package binaryName="wc_iconMenu" dependencies="400358049,781919164,159917928,212784684,715422167,362164715,313644474,-2071097198" description="Android Package" id="187810339" label="wc_iconMenu" platform="Android">
       <DynamicProperty name="packageId" value="com.fourjs.wc_iconMenu"/>
       <DynamicProperty name="packageLabel" value="wc_iconMenu"/>
       <Directory description="Binaries" excludedFiles="Test.42r" includedFiles="*.42?" label="Binaries" recursive="false" sourceDirectory="$(ProjectDir)/bin"/>
       <Directory description="Resources" includedFiles="*.4ad,*.4st,*.4tm,*.4tb,*.4sm,*.42s,*.iem" label="etc" recursive="false" sourceDirectory="$(ProjectDir)/etc"/>
-      <Directory description="Web Components" destinationDirectory="$(RootDir)/webcomponents" label="Webcomponents" sourceDirectory="$(ProjectDir)/webcomponents"/>
+      <Directory label="pics" recursive="false" sourceDirectory="$(ProjectDir)/pics"/>
+      <Directory description="Web Components" destinationDirectory="$(RootDir)/webcomponents" label="Webcomponents" sourceDirectory="$(ProjectDir)/pics/webcomponents"/>
+    </Package>
+    <Package binaryName="wc_iconMenu_GAR" dependencies="159917928,362164715,463996434,-2071097198,-2142739448" description="wc_iconMenu" id="-1633004068" label="wc_iconMenu_GAR" platform="Genero Application Server">
+      <DynamicProperty name="packageId" value="wc_iconMenu"/>
+      <DynamicProperty name="packageLabel" value="wc_iconMenu"/>
+      <Directory excludedFiles="Test.42r" includedFiles="*.42?" label="Binaries" sourceDirectory="$(ProjectDir)/bin"/>
+      <Directory label="etc" recursive="false" sourceDirectory="$(ProjectDir)/etc"/>
+      <Directory destinationDirectory="$(RootDir)/pics" includedFiles="*.png" label="pics" sourceDirectory="$(ProjectDir)/pics"/>
+      <Directory destinationDirectory="$(RootDir)/webcomponents" label="wc" sourceDirectory="$(ProjectDir)/pics/webcomponents"/>
+      <Directory includedFiles="*.xcf" label="xcf" sourceDirectory="$(ProjectDir)/xcf"/>
     </Package>
   </Group>
 </Project>

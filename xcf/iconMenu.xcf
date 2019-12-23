@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<APPLICATION Parent="defaultgdc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.4js.com/ns/gas/3.10/cfextwa.xsd">
+	<EXECUTION>
+		<ENVIRONMENT_VARIABLE Id="FGLRESOURCEPATH">$(res.deployment.path)/etc</ENVIRONMENT_VARIABLE>
+		<ENVIRONMENT_VARIABLE Id="FGLIMAGEPATH">$(res.deployment.path)/pics:$(res.fgldir)/lib/image2font.txt</ENVIRONMENT_VARIABLE>
+		<PATH>$(res.deployment.path)</PATH>
+		<MODULE>wc_iconMenu_main</MODULE>
+	</EXECUTION>
+</APPLICATION>
